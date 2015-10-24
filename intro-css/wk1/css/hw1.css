@@ -1,0 +1,20 @@
+header {
+    background-color: #388e3c;
+}
+
+h1 {
+  color: #212121;
+  text-align: center;
+}
+
+h2 {
+  color: #eaeaea;
+}
+
+section {
+  background-color: #8bc34a;
+}
+
+img {
+  display: none;
+}
