@@ -29,17 +29,24 @@ nav a {
 
 h1 {
   color: #8bc34a;
+  font-size: 2.5em;
   text-align: center;
 }
 
 h2 {
-  color: #eaeaea;
+  color: #388e3c;
+  font-size: 2em;
 }
 
 section {
-  background-color: #8bc34a;
+  background-color: #fff;
 }
 
 img {
   display: none;
+}
+
+.active {
+  background-color: #388e3c;
+  color: #c8e6c9;
 }
