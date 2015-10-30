@@ -33,7 +33,7 @@ nav a {
 aside {
   background-color: #4caf50;
   float: left;
-  /*padding: 3%;*/
+  padding: 3% 0;
   width: 20%;
 }
 
@@ -64,9 +64,9 @@ section {
   width: 70%;
 }
 
-img {
+aside img {
   border: solid 1px #212121;
-  margin: 2% auto;
+  margin: 3% 0 3% 12%;
   width: 75%;
 }
 
