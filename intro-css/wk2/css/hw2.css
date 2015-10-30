@@ -1,4 +1,5 @@
 body {
+  box-sizing: border-box;
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.5em;
@@ -9,7 +10,9 @@ body {
 header {
   background-color: #388e3c;
   background-image: url(../images/flywheel.jpg);
-  /*margin: 0 auto;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
   padding: 2%;
 }
 
@@ -27,23 +30,53 @@ nav a {
   text-decoration: none;
 }
 
+aside {
+  background-color: #4caf50;
+  float: left;
+  /*padding: 3%;*/
+  width: 20%;
+}
+
 h1 {
   color: #8bc34a;
   font-size: 2.5em;
+  padding: 2%;
   text-align: center;
 }
 
 h2 {
   color: #388e3c;
   font-size: 2em;
+  padding: 0 2%;
+}
+
+p {
+  margin: 0 auto;
+  padding: 2%;
 }
 
 section {
   background-color: #fff;
+  display: inline-block;
+  height: auto;
+  margin-right: 1%;
+  margin-top: 2%;
+  width: 70%;
 }
 
 img {
-  display: none;
+  border: solid 1px #212121;
+  margin: 2% auto;
+  width: 75%;
+}
+
+table {
+  margin: 2%;
+  padding: 0 2%;
+}
+
+ul {
+  margin: 2%;
 }
 
 .active {
