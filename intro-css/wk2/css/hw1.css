@@ -33,6 +33,7 @@ nav a {
 aside {
   background-color: #4caf50;
   float: left;
+  height: 100%;
   padding: 3% 0;
   width: 20%;
 }
@@ -80,6 +81,6 @@ ul {
 }
 
 .active {
-  background-color: #388e3c;
-  color: #c8e6c9;
+  background-color: #c8e6c9;
+  color: #212121;
 }
