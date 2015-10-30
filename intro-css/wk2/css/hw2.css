@@ -4,7 +4,17 @@ body {
 }
 
 header {
-    background-color: #388e3c;
+  background-color: #388e3c;
+  background-image: url(../images/flywheel.jpg);
+  padding: 2%;
+}
+
+nav a {
+  border-radius: 3px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1% 2%;
+  text-decoration: none;
 }
 
 h1 {
