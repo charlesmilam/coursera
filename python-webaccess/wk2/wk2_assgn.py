@@ -1,3 +1,9 @@
+# read from a file, find all the numbers within the file, and print the
+# sum of those numbers.
+# week 2 assignment for 'Using Python to Access Web Data' from UMichigan, via
+# Coursera
+# CL Milam 10/31/15
+
 import re
 
 inputFile = open('regex_sum_189847.txt', 'r')
