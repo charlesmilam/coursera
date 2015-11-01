@@ -9,10 +9,9 @@ for line in inputFile:
 
 nums = re.findall('[0-9]+', strFile)
 
-print nums
 print 'Elements in nums: ' + str(len(nums))
 
 for num in nums:
     sumNums += int(num)
 
-print sumNums
+print 'Sum of nums: ' + str(sumNums)
