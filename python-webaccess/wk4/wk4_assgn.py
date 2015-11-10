@@ -8,8 +8,7 @@ info = response.info()
 html = response.read()
 bs = BS(html)
 
-# print the response headers
-print info
-# print the response body
-print html
-print bs.title
+print bs("span")
+
+for tag in bs("span"):
+    print tag.name
