@@ -81,6 +81,7 @@ table {
 
 th {
   background-color: #C8E6C9;
+  border-bottom: 1px solid #388e3c;
   color: #388E3C;
   font-size: 1.2em;
   opacity: 1;
