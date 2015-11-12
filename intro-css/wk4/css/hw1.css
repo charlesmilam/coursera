@@ -87,6 +87,10 @@ th:first-child {
 
 td {
   padding: 0 2%;
+  text-align: center;
+}
+
+td:first-child {
   text-align: left;
 }
 
