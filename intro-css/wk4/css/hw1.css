@@ -74,8 +74,6 @@ section {
 }
 
 table {
-  border: 3px solid #388E3C;
-  border-radius: 15px;
   margin: 2%;
   text-align: center;
   width: 100%;
@@ -83,7 +81,8 @@ table {
 
 th {
   background-color: #C8E6C9;
-  border: 3px solid #388E3C;
+  /*border: 3px solid #388E3C;*/
+
   color: #388E3C;
   font-size: 1.2em;
   opacity: 1;
@@ -91,7 +90,12 @@ th {
 }
 
 th:first-child {
+  border-top-left-radius: 5px;
   text-align: left;
+}
+
+th:last-child {
+  border-top-right-radius: 5px;
 }
 
 td {
@@ -101,15 +105,18 @@ td {
 }
 
 td:first-child {
+  /*border-top-left-radius: 15px;*/
   text-align: left;
 }
 
 tr {
   color: #fff;
   opacity: .8;
+  transition: 0.5s;
 }
 
 tr:first-child {
+
   opacity: 1;
 }
 
