@@ -34,9 +34,15 @@ nav a {
 aside {
   background-color: #4caf50;
   float: left;
-  height: 100%;
+  height: 100vh;
   padding: 3% 0;
   width: 20%;
+}
+
+aside img {
+  border: solid 1px #212121;
+  margin: 3% 0 3% 12%;
+  width: 75%;
 }
 
 h1 {
@@ -68,11 +74,11 @@ section {
 
 table {
   border: 3px solid #388E3C;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 2%;
   padding: 0 2%;
   text-align: center;
-  width: 90%;
+  width: 100%;
 }
 
 th {
@@ -87,7 +93,7 @@ th:first-child {
 }
 
 td {
-  padding: 0 2%;
+  padding: 1% 2%;
   text-align: center;
 }
 
@@ -96,7 +102,7 @@ td:first-child {
 }
 
 tr {
-  color: #eaeaea;
+  color: #fff;
 }
 
 tr:nth-child(even) {
@@ -105,12 +111,6 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   background-color: #8BC34A;
-}
-
-aside img {
-  border: solid 1px #212121;
-  margin: 3% 0 3% 12%;
-  width: 75%;
 }
 
 ul {
