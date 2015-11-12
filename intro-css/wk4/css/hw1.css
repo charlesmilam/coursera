@@ -81,8 +81,6 @@ table {
 
 th {
   background-color: #C8E6C9;
-  /*border: 3px solid #388E3C;*/
-
   color: #388E3C;
   font-size: 1.2em;
   opacity: 1;
@@ -105,7 +103,6 @@ td {
 }
 
 td:first-child {
-  /*border-top-left-radius: 15px;*/
   text-align: left;
 }
 
@@ -116,7 +113,6 @@ tr {
 }
 
 tr:first-child {
-
   opacity: 1;
 }
 
