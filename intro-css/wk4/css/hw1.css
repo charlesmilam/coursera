@@ -65,15 +65,17 @@ section {
   width: 70%;
 }
 
+table {
+  border: 3px solid #388E3C;
+  border-radius: 5px;
+  margin: 2%;
+  padding: 0 2%;
+}
+
 aside img {
   border: solid 1px #212121;
   margin: 3% 0 3% 12%;
   width: 75%;
-}
-
-table {
-  margin: 2%;
-  padding: 0 2%;
 }
 
 ul {
