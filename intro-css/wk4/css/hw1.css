@@ -78,6 +78,7 @@ table {
 th {
   background-color: #C8E6C9;
   border: 3px solid #388E3C;
+  color: #388E3C;
   padding: 2%;
 }
 
@@ -92,6 +93,18 @@ td {
 
 td:first-child {
   text-align: left;
+}
+
+tr {
+  color: #eaeaea;
+}
+
+tr:nth-child(even) {
+  background-color: #4CAF50;
+}
+
+tr:nth-child(odd) {
+  background-color: #8BC34A;
 }
 
 aside img {
