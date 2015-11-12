@@ -16,10 +16,6 @@ header {
   padding: 2%;
 }
 
-/*nav {
-  margin: 0 auto;
-}*/
-
 nav a {
   background-color: #8bc34a;
   border-radius: 3px;
@@ -75,6 +71,7 @@ table {
 }
 
 th {
+  border: 3px solid #388E3C;
   padding-top: 2%;
   padding-right: 2%;
 }
