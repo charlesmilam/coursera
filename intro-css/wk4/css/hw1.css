@@ -78,23 +78,24 @@ table {
   margin: 2%;
   padding: 0 2%;
   text-align: center;
-  width: 100%;
+  width: 90%;
 }
 
 th {
   background-color: #C8E6C9;
   border: 3px solid #388E3C;
   color: #388E3C;
+  opacity: 1;
   padding: 2%;
 }
 
 th:first-child {
   text-align: left;
 }
-
 td {
   padding: 1% 2%;
   text-align: center;
+  /*opacity: .8;*/
 }
 
 td:first-child {
@@ -103,6 +104,15 @@ td:first-child {
 
 tr {
   color: #fff;
+  opacity: .8;
+}
+
+tr:first-child {
+  opacity: 1;
+}
+
+tr:hover {
+  opacity: 1;
 }
 
 tr:nth-child(even) {
