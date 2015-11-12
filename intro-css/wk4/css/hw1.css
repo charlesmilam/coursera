@@ -75,6 +75,10 @@ th {
   padding: 2%;
 }
 
+th:first-child {
+  text-align: left;
+}
+
 td {
   padding: 0 2%;
   text-align: left;
