@@ -70,6 +70,18 @@ table {
   border-radius: 5px;
   margin: 2%;
   padding: 0 2%;
+  text-align: center;
+  width: 90%;
+}
+
+th {
+  padding-top: 2%;
+  padding-right: 2%;
+}
+
+td {
+  padding: 0 2%;
+  text-align: left;
 }
 
 aside img {
