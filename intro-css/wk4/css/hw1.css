@@ -76,9 +76,8 @@ table {
   border: 3px solid #388E3C;
   border-radius: 15px;
   margin: 2%;
-  padding: 0 2%;
   text-align: center;
-  width: 90%;
+  width: 100%;
 }
 
 th {
@@ -92,6 +91,7 @@ th {
 th:first-child {
   text-align: left;
 }
+
 td {
   padding: 1% 2%;
   text-align: center;
