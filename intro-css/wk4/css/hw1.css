@@ -84,6 +84,7 @@ th {
   background-color: #C8E6C9;
   border: 3px solid #388E3C;
   color: #388E3C;
+  font-size: 1.2em;
   opacity: 1;
   padding: 2%;
 }
@@ -93,9 +94,9 @@ th:first-child {
 }
 
 td {
+  border-bottom: 1px solid #388E3C;
   padding: 1% 2%;
   text-align: center;
-  /*opacity: .8;*/
 }
 
 td:first-child {
