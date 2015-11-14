@@ -1,23 +1,41 @@
-<!-- This is a first example of using a template -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 4 Assignment | ULondon Responsive Web Course on Coursera</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- include our css files -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="assignment.css" rel="stylesheet">
+  </head>
 
-<head>
-
-<!-- include our libraries and css files -->
-
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/handlebars-v3.0.3.js"></script>
-
-<script src="js/bootstrap.min.js"></script>
-<script src="AnimalsData.js"></script>
-<script src="assignment.js"></script>
-
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="assignment.css" rel="stylesheet">
-
-</head>
-
-<body>
-
+  <body>
     <!-- put your HTML here -->
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="navbar-container container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">All Tasks <span class="sr-only">(current)</span></a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- needed libraries and such -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
 
-</body>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="AnimalsData.js"></script>
+    <script src="assignment.js"></script>
+  </body>
+</html>
