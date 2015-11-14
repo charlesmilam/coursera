@@ -11,12 +11,13 @@ var animalsCategoryTemplate, photos_template, photo_template, slideshow_template
 
 // variables to store the current displayed album and photo
 var currentAnimalCategory = animals_data.category[0];
-// var current_photo = current_album.photos[0];
+var currentImage = currentAnimalCategory.animals[0].image1;
+console.log("current image", currentImage);
 
 // a helper function that instantiates a template
 // and displays the results in the content div
 function showTemplate(template, data){
-	var html    = template(data);
+	var html = template(data);
 	$('.main-container').html(html);
 }
 
@@ -28,7 +29,7 @@ $(document).ready(function(){
 	//
 	// compile all of our templates ready for use
 	//
-	var source   = $("#animal-category-template").html();
+	var source = $("#animal-category-template").html();
 	animalsCategoryTemplate = Handlebars.compile(source);
 
 	// source   = $("#photos-template").html();
@@ -63,7 +64,7 @@ $(document).ready(function(){
 		// pretty much the same as the photos tab
 		// function so we could acutally just
 		// call $(".photo-thumbnail").click() )
-		$(".album-thumbnail").click(function (){
+		$(".category-thumbnail").click(function (){
 
 			// get the index (position in the array)
 			// of the album we clicked on
@@ -74,14 +75,14 @@ $(document).ready(function(){
 			var index = $(this).data("id");
 
 			// set the current album to this album
-			current_album = gallery.albums[index];
-
+			currentAnimalCategory = animals_data.category[index];
+      console.log(currentAnimalCategory);
 			// displays the photos template
-			showTemplate(photos_template, current_album);
+			showTemplate(photos_template, currentAnimalCategory);
 
 			// add an on click al all the photo thumbnails
 			// which displays the photo in a modal popup
-			$(".photo-thumbnail").click(function (){
+			$(".category-thumbnail").click(function (){
 				// get the index (position in the array)
 				// of the photo we clicked on
 				// "this" is the element that was clicked on
@@ -91,10 +92,10 @@ $(document).ready(function(){
 				var index = $(this).data("id");
 
 				// set the current photo to this photo
-				current_photo = current_album.photos[index];
+				currentImage = currentAnimalCategory[index].animals[index].image1;
 
 				// displays the single photo template
-				showTemplate(photo_template, current_photo);
+				showTemplate(photo_template, currentImage);
 			});
 		});
 	});
