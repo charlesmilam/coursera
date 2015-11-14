@@ -10,7 +10,7 @@
 var animalsCategoryTemplate, photos_template, photo_template, slideshow_template;
 
 // variables to store the current displayed album and photo
-var currentAnimalClass = animals_data.category[0];
+var currentAnimalCategory = animals_data.category[0];
 // var current_photo = current_album.photos[0];
 
 // a helper function that instantiates a template
@@ -28,7 +28,7 @@ $(document).ready(function(){
 	//
 	// compile all of our templates ready for use
 	//
-	var source   = $("#animal-class-template").html();
+	var source   = $("#animal-category-template").html();
 	animalsCategoryTemplate = Handlebars.compile(source);
 
 	// source   = $("#photos-template").html();
