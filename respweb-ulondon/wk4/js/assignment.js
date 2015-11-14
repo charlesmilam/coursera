@@ -152,6 +152,6 @@ $(document).ready(function(){
 	// start the page by showing the albums view
 	// we do this by virtually clicking on the
 	// albums tab
-	$("#albums-tab").click();
+	$("#categories-tab").click();
 
 });

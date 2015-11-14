@@ -48,12 +48,15 @@
       <div class="row">
         {{#each category}}
         <div class="col-sm-12 col-md-3">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">{{name}}</h3>
-            </div>
-            <div class="panel-body">
-              details go here
+          <div class="category-panel" data-id="{{@index}}">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{name}}</h3>
+              </div>
+              <div class="panel-body">
+                <img src="{{animals.image1}}" alt="" />
+                details go here
+              </div>
             </div>
           </div>
         </div>
