@@ -7,7 +7,7 @@
 // variables for all of the templates so we only have to compile
 // them once on page load and can then use the same compiled
 // templates many times
-var animalsClassTemplate, photos_template, photo_template, slideshow_template;
+var animalsCategoryTemplate, photos_template, photo_template, slideshow_template;
 
 // variables to store the current displayed album and photo
 var currentAnimalClass = animals_data.category[0];
@@ -29,7 +29,7 @@ $(document).ready(function(){
 	// compile all of our templates ready for use
 	//
 	var source   = $("#animal-class-template").html();
-	animalsClassTemplate = Handlebars.compile(source);
+	animalsCategoryTemplate = Handlebars.compile(source);
 
 	// source   = $("#photos-template").html();
 	// photos_template = Handlebars.compile(source);
@@ -44,16 +44,16 @@ $(document).ready(function(){
 	//  clicking on the albums tab shows the
 	//  thumbnails of all the albums
 	//
-	$("#albums-tab").click(function () {
+	$("#categories-tab").click(function () {
 
 		// displays the albums template
-		showTemplate(albums_template, gallery);
+		showTemplate(animalsCategoryTemplate, animals_data);
 
 		// make the albums tab the active one
 		// first make the currently active tab inactive
 		$(".nav-tabs .active").removeClass("active");
 		// then make albums tab active
-		$("#albums-tab").addClass("active");
+		$("#categories-tab").addClass("active");
 
 		// add a click callback to each album
 		// thumbnail which displays the photos
