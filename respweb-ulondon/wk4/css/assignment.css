@@ -9,3 +9,7 @@
   margin: 0 auto;
   width: 300px;
 }
+
+.category-content {
+  cursor: pointer;
+}
