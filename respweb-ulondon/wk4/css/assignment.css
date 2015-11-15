@@ -13,3 +13,22 @@
 .category-content {
   cursor: pointer;
 }
+
+.thumbnail {
+  cursor: pointer;
+}
+
+.thumbnail img {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.detail-content img {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
