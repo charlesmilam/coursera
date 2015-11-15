@@ -65,6 +65,9 @@
     </script>
     <!-- animals details template -->
     <script id="animal-details-template" type="text/x-handlebars-template">
+      <div class="page-header">
+        <h1>Various types of {{name}}</h1>
+      </div>
       <div class="row">
         {{#each animals}}
         <div class="col-sm-12 col-md-4">
@@ -73,14 +76,16 @@
               <div class="row">
                 <div class="col-sm-6">
                   <img class="img-responsive" src="{{image1}}" data-img-num="1" alt="{{name}}"/>
+                </div>
+                <div class="col-sm-6">
                   <img class="img-responsive" src="{{image2}}" data-img-num="2" alt="{{name}}"/>
                 </div>
-                <div class="caption">
-                  <h3>{{name}}</h3>
-                  <p>
-                    {{description}}
-                  </p>
-                </div>
+              </div>
+              <div class="caption">
+                <h3>{{name}}</h3>
+                <p>
+                  {{description}}
+                </p>
               </div>
             </div>
           </div>
