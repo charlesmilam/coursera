@@ -7,7 +7,7 @@
 // variables for all of the templates so we only have to compile
 // them once on page load and can then use the same compiled
 // templates many times
-var animalsCategoryTemplate, animalsDetailsTemplate, photo_template, slideshow_template;
+var animalsCategoryTemplate, animalsDetailsTemplate, animalDetailTemplate, slideshow_template;
 
 // variables to store the current displayed album and photo
 var currentAnimalCategory = animals_data.category[0];
@@ -35,8 +35,8 @@ $(document).ready(function(){
 	source   = $("#animal-details-template").html();
 	animalsDetailsTemplate = Handlebars.compile(source);
 
-	// source   = $("#photo-template").html();
-	// photo_template = Handlebars.compile(source);
+	source   = $("#animal-detail-template").html();
+	animalDetailTemplate = Handlebars.compile(source);
   //
 	// source   = $("#slideshow-template").html();
 	// slideshow_template = Handlebars.compile(source);
@@ -64,7 +64,7 @@ $(document).ready(function(){
 		// pretty much the same as the photos tab
 		// function so we could acutally just
 		// call $(".photo-thumbnail").click() )
-		$(".category-thumbnail").click(function (){
+		$(".category-content").click(function (){
 
 			// get the index (position in the array)
 			// of the album we clicked on
@@ -73,30 +73,32 @@ $(document).ready(function(){
 			// (which we set to the index of the album in
 			// the array - @index)
 			var index = $(this).data("id");
-
+      console.log("cat tab index", index);
 			// set the current album to this album
 			currentAnimalCategory = animals_data.category[index];
-
+      console.log("cat tab curr animal cat", currentAnimalCategory);
 			// displays the photos template
 			showTemplate(animalsDetailsTemplate, currentAnimalCategory);
 
 			// add an on click al all the photo thumbnails
 			// which displays the photo in a modal popup
-			$(".category-thumbnail").click(function (){
-				// get the index (position in the array)
-				// of the photo we clicked on
-				// "this" is the element that was clicked on
-				// data("id") gets the attribute data-id
-				// (which we set to the index of the photo in
-				// the array - @index)
-				var index = $(this).data("id");
-
-				// set the current photo to this photo
-				currentImage = currentAnimalCategory[index].animals[index].image1;
-
-				// displays the single photo template
-				showTemplate(photo_template, currentImage);
-			});
+			// $(".detail-content").click(function (){
+			// 	// get the index (position in the array)
+			// 	// of the photo we clicked on
+			// 	// "this" is the element that was clicked on
+			// 	// data("id") gets the attribute data-id
+			// 	// (which we set to the index of the photo in
+			// 	// the array - @index)
+			// 	var index = $(this).data("id");
+      //   console.log("detail content index", index);
+			// 	// set the current photo to this photo
+			// 	currentImage = currentAnimalCategory.animals[index].image1;
+      //   console.log("cat thumb curr image", currentImage);
+      //
+			// 	// displays the single photo template
+			// 	showTemplate(animalDetailTemplate, currentImage);
+			// });
+      $("#details-tab").click();
 		});
 	});
 
@@ -117,7 +119,7 @@ $(document).ready(function(){
 
 		// add an on click al all the photo thumbnails
 		// which displays the photo in a modal popup
-		$(".photo-thumbnail").click(function (){
+		$(".detail-content").click(function (){
 			// get the index (position in the array)
 			// of the photo we clicked on
 			// "this" is the element that was clicked on
@@ -127,10 +129,10 @@ $(document).ready(function(){
 			var index = $(this).data("id");
 
 			// set the current photo to this photo
-			currentImage = currentAnimalCategory[index].animals[index].image1;
-
+			currentAnimal = currentAnimalCategory.animals[index];
+      console.log('detail tab curr animaal', currentAnimal);
 			// displays the single photo template
-			showTemplate(photo_template, current_photo);
+			showTemplate(animalDetailTemplate, currentAnimal);
 		});
 	});
 

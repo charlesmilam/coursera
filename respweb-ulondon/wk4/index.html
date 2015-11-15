@@ -72,8 +72,8 @@
               <div class="panel-body">
                 <div class="row">
                   <div class="col-sm-6">
-                    <img class="img-responsive" src="{{image1}}" alt="{{name}}"/>
-                    <img class="img-responsive" src="{{image2}}" alt="{{name}}"/>
+                    <img class="img-responsive" src="{{image1}}" data-img-num="1" alt="{{name}}"/>
+                    <img class="img-responsive" src="{{image2}}" data-img-num="2" alt="{{name}}"/>
                   </div>
                 </div>
                 <p>
@@ -84,6 +84,24 @@
           </div>
         </div>
         {{/each}}
+      </div>
+    </script>
+    <script id="animal-detail-template" type="text/x-handlebars-template">
+      <h1>Details about a {{name}}</h1>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="detail-content" data-id="{{@index}}">
+            <div class="row">
+              <div class="col-sm-6">
+                <img class="img-responsive" src="{{image1}}" data-img-num="1" alt="{{name}}"/>
+                <img class="img-responsive" src="{{image2}}" data-img-num="2" alt="{{name}}"/>
+              </div>
+            </div>
+            <p>
+              {{description}}
+            </p>
+          </div>
+        </div>
       </div>
     </script>
   </body>
