@@ -1,0 +1,48 @@
+/* put your css code here */
+.main-container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.category-thumbnail img {
+  border: 1px solid #777;
+  border-radius: 3px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, .3);
+  margin: 0 auto;
+  width: 300px;
+}
+
+.category-content {
+  cursor: pointer;
+}
+
+.thumbnail {
+  cursor: pointer;
+}
+
+.thumbnail img {
+  border: 1px solid #777;
+  border-radius: 3px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, .3);
+}
+
+.detail-content img {
+  border: 1px solid #777;
+  border-radius: 3px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, .3);
+}
+
+.detail-desc {
+  margin-top: 2em;
+}
+
+.thumbnail {
+  padding: 1.5em;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
