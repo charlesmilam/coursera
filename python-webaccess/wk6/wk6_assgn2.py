@@ -2,7 +2,7 @@ import urllib
 import urllib2
 import json
 
-location = 'South Federal University'
+location = 'Stonehill College'
 base_url = 'http://pr4e.dr-chuck.com/tsugi/mod/python-data/data/geojson?'
 query_url = base_url + urllib.urlencode({'sensor':'false', 'address': location})
 
