@@ -8,11 +8,12 @@ data = json.loads(jdata)
 
 total = 0
 
-print data
+for datum in data['comments']:
+    total += datum['count']
 # comments = tree.findall(".//comment")
-# print 'number of comments:', len(comments)
+print 'number of comments:', len(data['comments'])
 #
 # for comment in comments:
 #     total += int(comment.find('count').text)
 #
-# print 'sum of counts:', total
+print 'sum of counts:', total
