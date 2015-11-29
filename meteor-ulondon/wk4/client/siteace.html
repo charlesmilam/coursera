@@ -78,12 +78,15 @@
   	<p>
   		{{description}}
   	</p>
-  	<a href="#" class="btn btn-default js-upvote">
-  		<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-  	</a>
-  	<a href="#" class="btn btn-default js-downvote">
-  		<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-  	</a>
+    <div class="btn-group btn-group-xs" role="group" aria-lable="vote up or down">
+      <a href="#" class="btn btn-success js-upvote">
+    		<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+    	</a>
+    	<a href="#" class="btn btn-warning js-downvote">
+    		<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+    	</a>
+    </div>
+
   	<!-- you will be putting your up and down vote buttons in here! -->
   </li>
 </template> <!-- end website detail -->
