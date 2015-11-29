@@ -49,7 +49,6 @@ Template.website_form.events({
     $("#website_form").toggle('slow');
   },
   "submit .js-save-website-form":function(event){
-    console.log('save event:', event);
     // get the data out of the form:
     var title = event.target.title.value;
     var url = event.target.url.value;
@@ -57,12 +56,17 @@ Template.website_form.events({
     console.log("The url they entered is: "+ url);
 
     // website saving code
-    Websites.insert({
-      title: title,
-      url: url,
-      description: description,
-      createdOn:new Date()
-    });
+    if (Meteor.user()) {
+      Websites.insert({
+        title: title,
+        url: url,
+        description: description,
+        createdOn:new Date()
+      });
+    }
+    else {
+      console.log("Site not added, user not logged in");
+    }
 
     return false;// stop the form submit from reloading the page
 
