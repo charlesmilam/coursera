@@ -1,9 +1,22 @@
 /////
-// accounts ui config
+// configs
 /////
+// accounts ui config
 Accounts.ui.config({
   passwordSignupFields: 'USERNAME_AND_EMAIL'
-});
+}); // end accounts ui
+
+// sAlerts config
+sAlert.config({
+  effect: 'jelly',
+  position: 'top',
+  timeout: 5000,
+  html: false,
+  onRouteClose: true,
+  stack: true,
+  offset: '70px',
+  beep: false
+}); // end accounts ui config
 
 /////
 // template helpers
@@ -48,7 +61,8 @@ Template.website_form.events({
   "click .js-toggle-website-form":function(event){
     $("#website_form").toggle('slow');
   },
-  "submit .js-save-website-form":function(event){
+  "submit .js-save-website-form":function(event, template){
+    // event.preventDefault();
     // get the data out of the form:
     var title = event.target.title.value;
     var url = event.target.url.value;
@@ -63,9 +77,15 @@ Template.website_form.events({
         description: description,
         createdOn:new Date()
       });
+      // let user know site was added
+      sAlert.success("Congrats! Your site '" + title + "' was successfully added");
+      // clear the form
+      template.find("form").reset();
     }
     else {
       console.log("Site not added, user not logged in");
+      // alert user they must be logged in
+      sAlert.error('Sorry, you must be logged in to add a website');
     }
 
     return false;// stop the form submit from reloading the page
