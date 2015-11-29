@@ -62,7 +62,6 @@ Template.website_form.events({
     $("#website_form").toggle('slow');
   },
   "submit .js-save-website-form":function(event, template){
-    // event.preventDefault();
     // get the data out of the form:
     var title = event.target.title.value;
     var url = event.target.url.value;
@@ -81,6 +80,8 @@ Template.website_form.events({
       sAlert.success("Congrats! Your site '" + title + "' was successfully added");
       // clear the form
       template.find("form").reset();
+      // add toggle it back closed
+      $("#website_form").toggle('slow');
     }
     else {
       console.log("Site not added, user not logged in");
