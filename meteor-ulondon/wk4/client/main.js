@@ -25,7 +25,7 @@ sAlert.config({
 // helper function that returns all available websites
 Template.website_list.helpers({
   websites:function(){
-    return Websites.find({});
+    return Websites.find({}, {sort: {upVote: -1, title: 1}});
   }
 });
 
@@ -105,7 +105,7 @@ Template.website_form.events({
         description: description,
         upVote: 0,
         downVote: 0,
-        createdOn:new Date()
+        createdOn: new Date()
       });
       // let user know site was added
       sAlert.success("Congrats! Your site '" + title + "' was successfully added");
