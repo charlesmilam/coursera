@@ -30,36 +30,44 @@
     <!-- custom alerts  -->
     {{> sAlert}}
   	<div class="container">
+      {{> website_title}}
   		{{> website_form}}
   		{{> website_list}}
   	</div>
   </main>
 </body>
 
+<template name="website_title">
+  <h1>Site Ace <small>share your favorite URLs</small></h1>
+</template>
+
 <!-- form for adding additional websites -->
 <template name="website_form">
-	<a class="btn btn-info js-toggle-website-form" href="#">
-  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-	</a>
-  Add a website
-	<div id="website_form" class="hidden_div">
-		<form class="js-save-website-form">
-		  <div class="form-group">
-		    <label for="url">Site address</label>
-		    <input type="url" class="form-control" id="url" placeholder="http://www.mysite.com" required>
-		  </div>
-		  <div class="form-group">
-		    <label for="title">Title</label>
-		    <input type="text" class="form-control" id="title" placeholder="Mysite" required>
-		  </div>
-		    <div class="form-group">
-		    <label for="description">Description</label>
-		    <input type="text" class="form-control" id="description" placeholder="I found this site really useful for ..." required>
-		  </div>
+  <div class="page-header">
+    <a class="btn btn-info js-toggle-website-form" href="#">
+    		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  	</a>
+    Add a website
+  	<div id="website_form" class="hidden_div">
+  		<form class="js-save-website-form">
+  		  <div class="form-group">
+  		    <label for="url">Site address</label>
+  		    <input type="url" class="form-control" id="url" placeholder="http://www.mysite.com" required>
+  		  </div>
+  		  <div class="form-group">
+  		    <label for="title">Title</label>
+  		    <input type="text" class="form-control" id="title" placeholder="Mysite" required>
+  		  </div>
+  		    <div class="form-group">
+  		    <label for="description">Description</label>
+  		    <input type="text" class="form-control" id="description" placeholder="I found this site really useful for ..." required>
+  		  </div>
 
-		  <button type="submit" class="btn btn-success">Submit</button>
-		</form>
-	</div>
+  		  <button type="submit" class="btn btn-success">Submit</button>
+  		</form>
+  	</div>
+  </div>
+
 </template> <!-- end website form -->
 
 <!-- template that displays several website items -->
