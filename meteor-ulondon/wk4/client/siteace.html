@@ -36,7 +36,7 @@
 
 <!-- form for adding additional websites -->
 <template name="website_form">
-	<a class="btn btn-default js-toggle-website-form" href="#">
+	<a class="btn btn-info js-toggle-website-form" href="#">
   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	</a>
 	<div id="website_form" class="hidden_div">
@@ -54,14 +54,14 @@
 		    <input type="text" class="form-control" id="description" placeholder="I found this site really useful for ...">
 		  </div>
 
-		  <button type="submit" class="btn btn-default">Submit</button>
+		  <button type="submit" class="btn btn-success">Submit</button>
 		</form>
 	</div>
 </template> <!-- end website form -->
 
 <!-- template that displays several website items -->
 <template name="website_list">
-	<ol>
+	<ol class="website-list">
   	{{#each websites}}
       {{> website_item}}
   	{{/each}}
