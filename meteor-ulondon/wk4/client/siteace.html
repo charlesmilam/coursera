@@ -82,7 +82,10 @@
 <!-- template that displays individual website entries -->
 <template name="website_item">
   <li class="website-item">
-  	<h3><a href="{{url}}" target="_blank">{{title}}</a></h3>
+  	<h3>
+      <a href="{{url}}" target="_blank">{{title}}</a>
+      <small><a href="#">view details</a></small>
+    </h3>
   	<p class="item-description">
   		{{description}}
   	</p>
