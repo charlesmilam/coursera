@@ -75,11 +75,11 @@
 <template name="website_item">
   <li class="website-item">
   	<h3><a href="{{url}}" target="_blank">{{title}}</a></h3>
-  	<p>
+  	<p class="item-description">
   		{{description}}
   	</p>
-    <p class="text-muted">
-      <small>Date added: {{createdOn}}</small>
+    <p class="text-muted item-date">
+      Date added: {{createdOn}}
     </p>
     <div class="btn-group btn-group-xs" role="group" aria-lable="vote up or down">
       <a href="#" class="btn btn-success js-upvote">
