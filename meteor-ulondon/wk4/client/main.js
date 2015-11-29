@@ -40,7 +40,21 @@ Template.website_item.events({
     // (this is the data context for the template)
     var website_id = this._id;
     console.log("Up voting website with id "+ website_id);
-    // put the code in here to add a vote to a website!
+    // add a vote to a website!
+    // only logged in users can vote
+    if (Meteor.user()) {
+      Websites.update(
+        {_id: website_id},
+        {$inc: {upVote: 1}}
+      );
+      // let user know site was added
+      sAlert.success('Your vote was registered');
+    }
+    else {
+      console.log("Vote not added, user not logged in");
+      // alert user they must be logged in
+      sAlert.error('Sorry, you must be logged in to vote on a website');
+    }
 
     return false;// prevent the button from reloading the page
   },
@@ -49,9 +63,24 @@ Template.website_item.events({
     // example of how you can access the id for the website in the database
     // (this is the data context for the template)
     var website_id = this._id;
+
     console.log("Down voting website with id "+ website_id);
 
     // put the code in here to remove a vote from a website!
+    // only logged in users can vote
+    if (Meteor.user()) {
+      Websites.update(
+        {_id: website_id},
+        {$inc: {downVote: 1}}
+      );
+      // let user know site was added
+      sAlert.success('Your vote was registered');
+    }
+    else {
+      console.log("Vote not added, user not logged in");
+      // alert user they must be logged in
+      sAlert.error('Sorry, you must be logged in to vote on a website');
+    }
 
     return false;// prevent the button from reloading the page
   }
@@ -74,6 +103,8 @@ Template.website_form.events({
         title: title,
         url: url,
         description: description,
+        upVote: 0,
+        downVote: 0,
         createdOn:new Date()
       });
       // let user know site was added
