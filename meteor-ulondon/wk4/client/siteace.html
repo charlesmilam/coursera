@@ -1,5 +1,5 @@
 <head>
-  <title>SITEACE</title>
+  <title>siteace</title>
 </head>
 
 <body>
@@ -131,4 +131,17 @@
 <!-- template that display a single site details -->
 <template name="site_detail">
   <h2>{{siteDetail.title}}</h2>
+  <p>
+    <span class="text-muted">Description:</span> {{siteDetail.description}}
+  </p>
+  <p>
+    <span class="text-muted">Up Votes:</span> {{siteDetail.upVote}}<br>
+    <span class="text-muted">Down Votes:</span> {{siteDetail.downVote}}
+  </p>
+  <p>
+    <span class="text-muted">Date Added:</span> {{siteDetail.createdOn}}
+  </p>
+  <p>
+    <a href="/">back to the site list</a>
+  </p>
 </template> <!-- end single site details -->
