@@ -19,6 +19,11 @@ sAlert.config({
 }); // end accounts ui config
 
 /////
+// routing
+/////
+
+
+/////
 // template helpers
 /////
 
