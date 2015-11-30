@@ -36,16 +36,17 @@ FlowRouter.route('/', {
   }
 }); // end main route
 
+// site detail route
 FlowRouter.route('/site/:siteID', {
   action: function(params) {
     console.log('site detail params', params);
     BlazeLayout.render('detailLayout',
     {
       top: 'website_header',
-      detail: 'site-detail'
+      detail: 'site_detail'
     });
   }
-});
+}); // end site detail route
 
 /////
 // template helpers
@@ -55,6 +56,15 @@ FlowRouter.route('/site/:siteID', {
 Template.website_list.helpers({
   websites:function(){
     return Websites.find({}, {sort: {upVote: -1, title: 1}});
+  }
+});
+
+// helper function to return a single website
+Template.site_detail.helpers({
+  siteDetail: function(){
+    var siteID = FlowRouter.getParam('siteID');
+    console.log('detail helper:', Websites.findOne({_id: siteID}));
+    return Websites.findOne({_id: siteID});
   }
 });
 
