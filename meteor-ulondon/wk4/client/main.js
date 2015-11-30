@@ -185,7 +185,11 @@ Template.comment_form.events({
     if (Meteor.user()) {
       Websites.update(
         {_id: siteID},
-        {$push: {comments: {'comment': comment, 'userName': userName}}},
+        {$push: {comments: {'comment': comment,
+          'userName': userName,
+          'createOn': new Date()
+        }
+      }},
       );
       // let user know site was added
       sAlert.success("Thanks! Your comment was successfully added");
