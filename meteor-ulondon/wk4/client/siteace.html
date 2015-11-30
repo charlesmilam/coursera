@@ -12,21 +12,30 @@
   <main>
     <!-- custom alerts  -->
     {{> sAlert}}
-  	<div class="container">
-      {{> website_header}}
+  	<div class="container main-container">
+      {{> mainLayout}}
+      <!-- {{> website_header}}
   		{{> website_form}}
-  		{{> website_list}}
+  		{{> website_list}} -->
   	</div>
   </main> <!-- end main content -->
 </body>
 
-<!-- layout template -->
+<!-- layout templates -->
 <!-- main layout -->
-<template name="main">
-  {{> Template.dynamic template=nav}}
+<template name="mainLayout">
   {{> Template.dynamic template=top}}
-  {{> Template.dynamic template=main}}
+  {{> Template.dynamic template=form}}
+  {{> Template.dynamic template=list}}
 </template>
+
+<!-- detail layout -->
+<template name="detailLayout">
+  {{> Template.dynamic template=top}}
+  {{> Template.dynamic template=detail}}
+</template>
+
+<!-- end layout templates -->
 
 <!-- the navbar -->
 <template name="navbar">
@@ -49,7 +58,7 @@
       </ul>
     </div>
   </div>
-</template>
+</template> <!-- end navbar -->
 
 <!-- header for pages -->
 <template name="website_header">
@@ -82,7 +91,6 @@
   		</form>
   	</div>
   </div>
-
 </template> <!-- end website form -->
 
 <!-- template that displays several website items -->
@@ -99,7 +107,7 @@
   <li class="website-item">
   	<h3>
       <a href="{{url}}" target="_blank">{{title}}</a>
-      <small><a href="#">view details</a></small>
+      <small><a href="/site/{{_id}}">view details</a></small>
     </h3>
   	<p class="item-description">
   		{{description}}
@@ -118,4 +126,9 @@
     	</a>
     </div>
   </li>
-</template> <!-- end website detail -->
+</template> <!-- end website entries -->
+
+<!-- site details -->
+<template name="site-detail">
+  <h2>{{title}}</h2>
+</template>

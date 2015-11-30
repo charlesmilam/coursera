@@ -18,10 +18,34 @@ sAlert.config({
   beep: false
 }); // end accounts ui config
 
+// BlazeLayout config
+BlazeLayout.setRoot('.main-container');
+
 /////
 // routing
 /////
+// main route
+FlowRouter.route('/', {
+  action: function(params) {
+    BlazeLayout.render("mainLayout",
+    {
+      top: "website_header",
+      form: "website_form",
+      list: "website_list"
+    });
+  }
+}); // end main route
 
+FlowRouter.route('/site/:siteID', {
+  action: function(params) {
+    console.log('site detail params', params);
+    BlazeLayout.render('detailLayout',
+    {
+      top: 'website_header',
+      detail: 'site-detail'
+    });
+  }
+});
 
 /////
 // template helpers
