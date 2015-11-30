@@ -2,6 +2,13 @@
 .hidden_div{
 	display:none;
 }
+.brand-text {
+	color: #d32f2f;
+	font-variant: small-caps;
+}
+.navbar-brand:hover {
+	color: #f44336;
+}
 .website-list {
 	padding-top: 1.5em;
 }
