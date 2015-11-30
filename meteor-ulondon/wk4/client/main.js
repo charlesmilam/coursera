@@ -146,6 +146,7 @@ Template.website_form.events({
         description: description,
         upVote: 0,
         downVote: 0,
+        comments: [],
         createdOn: new Date()
       });
       // let user know site was added
@@ -172,14 +173,20 @@ Template.comment_form.events({
   },
   "submit .js-save-comment-form":function(event, template){
     // get the data out of the form:
+    console.log('comment event:', this);
+    var siteID = FlowRouter.getParam('siteID');
     var comment = event.target.comment.value;
+    var userName = Meteor.user().username;
+    console.log('comment site id', siteID);
     console.log("The comment they entered is: "+ comment);
+    console.log('Comment user name:', userName);
 
     // website saving code
     if (Meteor.user()) {
-      // Websites.insert({
-      //   comment: comment,
-      // });
+      Websites.update(
+        {_id: siteID},
+        {$push: {comments: {'comment': comment, 'userName': userName}}},
+      );
       // let user know site was added
       sAlert.success("Thanks! Your comment was successfully added");
       // clear the form
