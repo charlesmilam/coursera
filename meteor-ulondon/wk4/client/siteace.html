@@ -33,6 +33,8 @@
 <template name="detailLayout">
   {{> Template.dynamic template=top}}
   {{> Template.dynamic template=detail}}
+  {{> Template.dynamic template=form}}
+  {{> Template.dynamic template=comments}}
 </template>
 
 <!-- end layout templates -->
@@ -145,3 +147,13 @@
     <a href="/">back to the site list</a>
   </p>
 </template> <!-- end single site details -->
+
+<!-- form for the adding of comment about a single site -->
+<template name="comment_form">
+  <h2>A form will go here</h2>
+</template> <!-- end comment form -->
+
+<!-- template that displays single site comments -->
+<template name="comments_list">
+  <h2>A lsit of comments will go here</h2>
+</template>

@@ -43,7 +43,9 @@ FlowRouter.route('/site/:siteID', {
     BlazeLayout.render('detailLayout',
     {
       top: 'website_header',
-      detail: 'site_detail'
+      detail: 'site_detail',
+      form: 'comment_form',
+      comments: 'comments_list'
     });
   }
 }); // end site detail route
