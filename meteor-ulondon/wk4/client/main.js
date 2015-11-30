@@ -70,6 +70,14 @@ Template.site_detail.helpers({
   }
 });
 
+// helper function to return a list of comments
+Template.comments_list.helpers({
+  comments: function() {
+    var siteID = FlowRouter.getParam('siteID');
+    var site = Websites.findOne({_id: siteID});
+    return site.comments;
+  }
+});
 
 /////
 // template events

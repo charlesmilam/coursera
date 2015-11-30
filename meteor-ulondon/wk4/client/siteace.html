@@ -171,5 +171,21 @@
 
 <!-- template that displays single site comments -->
 <template name="comments_list">
-  <h2>A lsit of comments will go here</h2>
+  <ol class="comments-list">
+  	{{#each comments}}
+      {{> comment_item}}
+  	{{/each}}
+	</ol>
 </template>
+
+<!-- template that displays individual comments -->
+<template name="comment_item">
+  <li class="comment-item">
+  	<p class="comment">
+  		{{comment}}
+  	</p>
+    <p class="text-muted item-date">
+      Date added: {{createdOn}}
+    </p>
+  </li>
+</template> <!-- end website entries -->
