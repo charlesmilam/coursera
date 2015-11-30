@@ -165,3 +165,35 @@ Template.website_form.events({
 
   }
 });
+
+Template.comment_form.events({
+  "click .js-toggle-comment-form":function(event){
+    $("#comment-form").toggle('slow');
+  },
+  "submit .js-save-comment-form":function(event, template){
+    // get the data out of the form:
+    var comment = event.target.comment.value;
+    console.log("The comment they entered is: "+ comment);
+
+    // website saving code
+    if (Meteor.user()) {
+      // Websites.insert({
+      //   comment: comment,
+      // });
+      // let user know site was added
+      sAlert.success("Thanks! Your comment was successfully added");
+      // clear the form
+      template.find("form").reset();
+      // add toggle it back closed
+      $("#comment-form").toggle('slow');
+    }
+    else {
+      console.log("Site not added, user not logged in");
+      // alert user they must be logged in
+      sAlert.error('Sorry, you must be logged in to add a website');
+    }
+
+    return false;// stop the form submit from reloading the page
+
+  }
+});

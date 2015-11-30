@@ -150,7 +150,23 @@
 
 <!-- form for the adding of comment about a single site -->
 <template name="comment_form">
-  <h2>A form will go here</h2>
+  <div class="page-header">
+    <a class="btn btn-info js-toggle-comment-form" href="#">
+  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  	</a>
+    Add a comment
+  	<div id="comment-form" class="hidden_div">
+  		<form class="js-save-comment-form">
+  		  <div class="form-group">
+  		    <label for="comment">Enter your comment</label>
+  		    <textarea class="form-control" id="comment" required>Here are my thoughts...
+          </textarea>
+  		  </div>
+
+  		  <button type="submit" class="btn btn-success">Submit</button>
+  		</form>
+  	</div>
+  </div>
 </template> <!-- end comment form -->
 
 <!-- template that displays single site comments -->
