@@ -195,7 +195,7 @@ Template.comment_form.events({
         {_id: siteID},
         {$push: {comments: {'comment': comment,
           'userName': userName,
-          'createOn': new Date()
+          'createdOn': new Date()
         }
       }},
       );
