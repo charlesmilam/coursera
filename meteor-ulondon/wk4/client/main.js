@@ -64,7 +64,6 @@ Template.website_list.helpers({
 Template.site_detail.helpers({
   siteDetail: function(){
     var siteID = FlowRouter.getParam('siteID');
-    console.log('detail helper:', Websites.findOne({_id: siteID}));
     return Websites.findOne({_id: siteID});
   }
 });
