@@ -143,7 +143,9 @@ Template.website_form.events({
     var url = event.target.url.value;
     var description = event.target.description.value;
     console.log("The url they entered is: "+ url);
-
+    // var meta = extractMeta('http://google.com');
+    // console.log('meta from extract:', meta.title);
+    extractMeta(url, function (err, res) { console.log(res); });
     // website saving code
     if (Meteor.user()) {
       Websites.insert({
