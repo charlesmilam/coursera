@@ -39,7 +39,6 @@ FlowRouter.route('/', {
 // site detail route
 FlowRouter.route('/site/:siteID', {
   action: function(params) {
-    console.log('site detail params', params);
     BlazeLayout.render('detailLayout',
     {
       top: 'website_header',
@@ -181,7 +180,6 @@ Template.comment_form.events({
   },
   "submit .js-save-comment-form":function(event, template){
     // get the data out of the form:
-    console.log('comment event:', this);
     var siteID = FlowRouter.getParam('siteID');
     var comment = event.target.comment.value;
     var userName = Meteor.user().username;
@@ -189,7 +187,7 @@ Template.comment_form.events({
     console.log("The comment they entered is: "+ comment);
     console.log('Comment user name:', userName);
 
-    // website saving code
+    // comment saving code
     if (Meteor.user()) {
       Websites.update(
         {_id: siteID},
@@ -199,7 +197,7 @@ Template.comment_form.events({
         }
       }},
       );
-      // let user know site was added
+      // let user know comment was added
       sAlert.success("Thanks! Your comment was successfully added");
       // clear the form
       template.find("form").reset();
@@ -209,7 +207,7 @@ Template.comment_form.events({
     else {
       console.log("Site not added, user not logged in");
       // alert user they must be logged in
-      sAlert.error('Sorry, you must be logged in to add a website');
+      sAlert.error('Sorry, you must be logged in to add a comment');
     }
 
     return false;// stop the form submit from reloading the page
