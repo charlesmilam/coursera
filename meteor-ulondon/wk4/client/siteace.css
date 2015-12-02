@@ -5,9 +5,15 @@
 .brand-text {
 	color: #d32f2f;
 }
+nav {
+	margin-bottom: 3em;
+}
 .navbar-brand:hover {
 	color: #f44336;
 }
+/*.website-header {
+	margin-top: 14em;
+}*/
 .search-description {
 	font-size: .8em;
 }

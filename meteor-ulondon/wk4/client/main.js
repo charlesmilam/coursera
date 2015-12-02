@@ -93,7 +93,7 @@ Template.search.helpers({
   loadmoreAttributes: {'class': 'btn btn-info'},
   inputAttributes:  {
                       'class': 'form-control',
-                      'placeholder': 'Start searching...'
+                      'placeholder': 'Search/filter by user name, site title, or description...'
                     }
 });
 
