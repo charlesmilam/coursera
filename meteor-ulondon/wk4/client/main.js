@@ -162,10 +162,12 @@ Template.website_form.events({
     var title = event.target.title.value;
     var url = event.target.url.value;
     var description = event.target.description.value;
+    var createName = Meteor.user().username;
     console.log("The url they entered is: "+ url);
+    console.log('createdBy user', createName);
     // var meta = extractMeta('http://google.com');
     // console.log('meta from extract:', meta.title);
-    extractMeta(url, function (err, res) { console.log(res); });
+    // extractMeta(url, function (err, res) { console.log(res); });
     // website saving code
     if (Meteor.user()) {
       Websites.insert({
@@ -175,7 +177,7 @@ Template.website_form.events({
         upVote: 0,
         downVote: 0,
         comments: [],
-        username: Meteor.user().userName,
+        createdBy: createName,
         createdOn: new Date()
       });
       // let user know site was added

@@ -113,6 +113,7 @@
   		{{description}}
   	</p>
     <p class="text-muted item-date">
+      Added by: {{createdBy}} <br>
       Date added: {{createdOn}}
     </p>
     <div class="btn-group btn-group-xs" role="group" aria-lable="vote up or down">
@@ -194,7 +195,7 @@
 
 <!-- template for search -->
 <template name="search">
-  {{> EasySearch.Input index=websitesIndex attributes=inputAttributes allDocsOnEmpty=false }}
+  {{> EasySearch.Input index=websitesIndex attributes=inputAttributes}}
 
   <!-- {{#EasySearch.IfInputEmpty index=websitesIndex}}
     <div>Start searching!</div>
@@ -220,5 +221,7 @@
   {{#EasySearch.IfNoResults index=websitesIndex}}
     <div class="no-results">No results found!</div>
   {{/EasySearch.IfNoResults}}
+
+
   {{> EasySearch.Pagination index=websitesIndex maxPages=10}}
 </template> <!-- end search template -->
