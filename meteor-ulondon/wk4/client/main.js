@@ -89,7 +89,8 @@ Template.comments_list.helpers({
 
 // helper function sets the index for the search
 Template.search.helpers({
-  websitesIndex: () => WebsitesIndex // instanceof EasySearch.Index
+  websitesIndex: () => WebsitesIndex, // instanceof EasySearch.Index
+  loadmoreAttributes: {'class': 'btn btn-info'}
 });
 
 /////

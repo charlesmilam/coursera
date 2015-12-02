@@ -210,7 +210,7 @@
     {{/EasySearch.Each}}
   </ul>
 
-  {{> EasySearch.LoadMore index=websitesIndex}}
+  {{> EasySearch.LoadMore index=websitesIndex attributes=loadmoreAttributes }}
 
   {{#EasySearch.IfNoResults index=websitesIndex}}
     <div class="no-results">No results found!</div>
