@@ -4,5 +4,6 @@ Websites = new Mongo.Collection("websites");
 WebsitesIndex = new EasySearch.Index({
   collection: Websites,
   fields: ['url', 'title', 'description'],
+  limit: 5,
   engine: new EasySearch.Minimongo()
 });

@@ -194,10 +194,12 @@
 
 <!-- template for search -->
 <template name="search">
-  {{> EasySearch.Input index=websitesIndex attributes=inputAttributes event=enter}}
-  {{#EasySearch.IfInputEmpty index=websitesIndex}}
+  {{> EasySearch.Input index=websitesIndex attributes=inputAttributes allDocsOnEmpty=false }}
+
+  <!-- {{#EasySearch.IfInputEmpty index=websitesIndex}}
     <div>Start searching!</div>
-  {{/EasySearch.IfInputEmpty}}
+  {{/EasySearch.IfInputEmpty}} -->
+
   <h3>Search Results</h3>
   <ul>
     {{#EasySearch.Each index=websitesIndex}}
@@ -213,7 +215,7 @@
     {{/EasySearch.Each}}
   </ul>
 
-  {{> EasySearch.LoadMore index=websitesIndex attributes=loadmoreAttributes }}
+  <!-- {{> EasySearch.LoadMore index=websitesIndex attributes=loadmoreAttributes }} -->
 
   {{#EasySearch.IfNoResults index=websitesIndex}}
     <div class="no-results">No results found!</div>
