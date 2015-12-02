@@ -90,10 +90,11 @@ Template.comments_list.helpers({
 // helper function sets the index for the search
 Template.search.helpers({
   websitesIndex: () => WebsitesIndex, // instanceof EasySearch.Index
-  loadmoreAttributes: {
-                        'class': 'btn btn-info',
-                        'placeholder': 'Start searching...'
-                      }
+  loadmoreAttributes: {'class': 'btn btn-info'},
+  inputAttributes:  {
+                      'class': 'form-control',
+                      'placeholder': 'Start searching...'
+                    }
 });
 
 /////

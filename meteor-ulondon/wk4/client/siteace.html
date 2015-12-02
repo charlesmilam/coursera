@@ -194,7 +194,10 @@
 
 <!-- template for search -->
 <template name="search">
-  {{> EasySearch.Input index=websitesIndex}}
+  {{> EasySearch.Input index=websitesIndex attributes=inputAttributes event=enter}}
+  {{#EasySearch.IfInputEmpty index=websitesIndex}}
+    <div>Start searching!</div>
+  {{/EasySearch.IfInputEmpty}}
   <h3>Search Results</h3>
   <ul>
     {{#EasySearch.Each index=websitesIndex}}
