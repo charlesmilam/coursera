@@ -8,6 +8,12 @@
 .navbar-brand:hover {
 	color: #f44336;
 }
+.search-description {
+	font-size: .8em;
+}
+.search-url {
+	font-size: .7em;
+}
 .website-list {
 	padding-top: 1.5em;
 }

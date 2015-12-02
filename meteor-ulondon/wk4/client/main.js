@@ -30,6 +30,7 @@ FlowRouter.route('/', {
     BlazeLayout.render("mainLayout",
     {
       top: "website_header",
+      search: 'search',
       form: "website_form",
       list: "website_list"
     });

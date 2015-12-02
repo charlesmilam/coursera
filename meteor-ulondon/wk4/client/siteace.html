@@ -14,9 +14,6 @@
     {{> sAlert}}
   	<div class="container main-container">
       {{> mainLayout}}
-      <!-- {{> website_header}}
-  		{{> website_form}}
-  		{{> website_list}} -->
   	</div>
   </main> <!-- end main content -->
 </body>
@@ -25,6 +22,7 @@
 <!-- main layout -->
 <template name="mainLayout">
   {{> Template.dynamic template=top}}
+  {{> Template.dynamic template=search}}
   {{> Template.dynamic template=form}}
   {{> Template.dynamic template=list}}
 </template>
@@ -200,7 +198,15 @@
   <h3>Search Results</h3>
   <ul>
     {{#EasySearch.Each index=websitesIndex}}
-      <li>{{title}} {{description}} {{url}}</li>
+      <li>
+        <h4>{{title}}</h4>
+        <p class="search-description">
+          {{description}}
+        </p>
+        <p class="search-url">
+          <a href="{{url}}" target="_blank">{{url}}</a>
+        </p>
+      </li>
     {{/EasySearch.Each}}
   </ul>
 
