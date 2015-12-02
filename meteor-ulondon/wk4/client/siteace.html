@@ -193,3 +193,20 @@
     </p>
   </li>
 </template> <!-- end website entries -->
+
+<!-- template for search -->
+<template name="search">
+  {{> EasySearch.Input index=websitesIndex}}
+  <h3>Search Results</h3>
+  <ul>
+    {{#EasySearch.Each index=websitesIndex}}
+      <li>{{title}} {{description}} {{url}}</li>
+    {{/EasySearch.Each}}
+  </ul>
+
+  {{> EasySearch.LoadMore index=websitesIndex}}
+
+  {{#EasySearch.IfNoResults index=websitesIndex}}
+    <div class="no-results">No results found!</div>
+  {{/EasySearch.IfNoResults}}
+</template> <!-- end search template -->
