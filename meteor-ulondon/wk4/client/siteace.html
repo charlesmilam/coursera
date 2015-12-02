@@ -22,9 +22,9 @@
 <!-- main layout -->
 <template name="mainLayout">
   {{> Template.dynamic template=top}}
-  {{> Template.dynamic template=search}}
   {{> Template.dynamic template=form}}
-  {{> Template.dynamic template=list}}
+  {{> Template.dynamic template=search}}
+  <!-- {{> Template.dynamic template=list}} -->
 </template>
 
 <!-- detail layout -->
@@ -200,10 +200,10 @@
     <div>Start searching!</div>
   {{/EasySearch.IfInputEmpty}} -->
 
-  <h3>Search Results</h3>
   <ul>
     {{#EasySearch.Each index=websitesIndex}}
-      <li>
+      {{> website_item}}
+      <!-- <li>
         <h4>{{title}}</h4>
         <p class="search-description">
           {{description}}
@@ -211,7 +211,7 @@
         <p class="search-url">
           <a href="{{url}}" target="_blank">{{url}}</a>
         </p>
-      </li>
+      </li> -->
     {{/EasySearch.Each}}
   </ul>
 
