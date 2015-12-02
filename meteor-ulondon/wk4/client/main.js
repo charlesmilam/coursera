@@ -175,6 +175,7 @@ Template.website_form.events({
         upVote: 0,
         downVote: 0,
         comments: [],
+        username: Meteor.user().userName,
         createdOn: new Date()
       });
       // let user know site was added
