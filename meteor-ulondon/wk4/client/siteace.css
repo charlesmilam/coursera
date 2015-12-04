@@ -41,8 +41,6 @@ li {
 }
 .site-pag:hover {
 	cursor: pointer;
-	text-decoration: underline;
-}
-.site-pag a:hover {
-	text-decoration: underline;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
 }
