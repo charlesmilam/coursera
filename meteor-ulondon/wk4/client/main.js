@@ -159,6 +159,7 @@ Template.website_form.events({
 
     // website saving code
     if (Meteor.user()) {
+      console.log('save code', Meteor.user());
       Websites.insert({
         title: title,
         url: url,
@@ -166,7 +167,8 @@ Template.website_form.events({
         upVote: 0,
         downVote: 0,
         comments: [],
-        createdBy: Meteor.user().username,
+        createdByName: Meteor.user().username,
+        createdById: Meteor.user()._id,
         createdOn: new Date()
       });
       // let user know site was added
@@ -204,7 +206,7 @@ Template.comment_form.events({
       Websites.update(
         {_id: siteID},
         {$push: {comments: {'comment': comment,
-          'userName': userName,
+          'userName': Meteor.user().username,
           'createdOn': new Date()
         }
       }},
