@@ -3,7 +3,6 @@ Websites = new Mongo.Collection("websites");
 // basic security for websites collection
 Websites.allow({
   insert: function(userId, doc) {
-    console.log('collections insert', userId, doc);
     if (Meteor.user()) {
       if (userId != doc.createdById) {
         return false;
