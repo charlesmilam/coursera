@@ -50,15 +50,6 @@ FlowRouter.route('/site/:siteID', {
   }
 }); // end site detail route
 
-// EasySearch test
-// Tracker.autorun(function () {
-//   let cursor = WebsitesIndex.search('course'); // search all docs that contain "Marie" in the name or score field
-//
-//   console.log(
-//     'EasySearch fetch', cursor.fetch()); // log found documents with default search limit
-//   console.log('EasySearch count', cursor.count()); // log count of all found documents
-// });
-
 /////
 // template helpers
 /////
@@ -83,7 +74,9 @@ Template.comments_list.helpers({
   comments: function() {
     var siteID = FlowRouter.getParam('siteID');
     var site = Websites.findOne({_id: siteID});
-    return site.comments;
+    if (site) {
+      return site.comments;
+    }    
   }
 });
 
@@ -229,7 +222,7 @@ Template.comment_form.events({
       $("#comment-form").toggle('slow');
     }
     else {
-      console.log("Site not added, user not logged in");
+      console.log("Comment not added, user not logged in");
       // alert user they must be logged in
       sAlert.error('Sorry, you must be logged in to add a comment');
     }
