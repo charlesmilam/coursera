@@ -1,0 +1,46 @@
+/* CSS declarations go here */
+.hidden_div{
+	display:none;
+}
+.brand-text {
+	color: #d32f2f;
+}
+nav {
+	margin-bottom: 3em;
+}
+.navbar-brand:hover {
+	color: #f44336;
+}
+/*.website-header {
+	margin-top: 14em;
+}*/
+.search-description {
+	font-size: .8em;
+}
+.search-url {
+	font-size: .7em;
+}
+.website-list {
+	padding-top: 1.5em;
+}
+.website-item {
+	padding: .5em 0;
+}
+li {
+	font-size: 1.5em;
+	list-style-type: none;
+}
+.item-description {
+	font-size: .9em;
+}
+.item-date {
+	font-size: .6em;
+}
+.comment-user {
+	font-size: .7em;
+}
+.site-pag:hover {
+	cursor: pointer;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+}

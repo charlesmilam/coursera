@@ -1,0 +1,217 @@
+<head>
+  <title>SiteAce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<!-- navbar   -->
+  <nav>
+    {{> navbar}}
+  </nav><!-- end navbar -->
+
+  <!-- main content -->
+  <main>
+    <!-- custom alerts  -->
+    {{> sAlert}}
+  	<div class="container main-container">
+      {{> mainLayout}}
+  	</div>
+  </main> <!-- end main content -->
+</body>
+
+<!-- layout templates -->
+<!-- main layout -->
+<template name="mainLayout">
+  {{> Template.dynamic template=top}}
+  {{> Template.dynamic template=form}}
+  {{> Template.dynamic template=search}}
+  <!-- {{> Template.dynamic template=list}} -->
+</template>
+
+<!-- detail layout -->
+<template name="detailLayout">
+  {{> Template.dynamic template=top}}
+  {{> Template.dynamic template=detail}}
+  {{> Template.dynamic template=form}}
+  {{> Template.dynamic template=comments}}
+</template>
+
+<!-- end layout templates -->
+
+<!-- the navbar -->
+<template name="navbar">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="/"><span class="brand-text">SiteAce</span></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Link</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {{> loginButtons}}
+        </ul>
+      </div>
+    </div>
+    </div>
+</template> <!-- end navbar -->
+
+<!-- header for pages -->
+<template name="website_header">
+  <h1><span class="brand-text">SiteAce</span> <small>share your favorite URLs</small></h1>
+</template>
+
+<!-- form for adding additional websites -->
+<template name="website_form">
+  <div class="page-header">
+    <a class="btn btn-info js-toggle-website-form" href="#">
+    		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  	</a>
+    Add a website
+  	<div id="website_form" class="hidden_div">
+  		<form class="js-save-website-form">
+  		  <div class="form-group">
+  		    <label for="url">Site address</label>
+  		    <input type="url" class="form-control" id="url" placeholder="http://www.mysite.com" required>
+  		  </div>
+  		  <div class="form-group">
+  		    <label for="title">Title</label>
+  		    <input type="text" class="form-control" id="title" placeholder="Mysite" required>
+  		  </div>
+  		    <div class="form-group">
+  		    <label for="description">Description</label>
+  		    <input type="text" class="form-control" id="description" placeholder="I found this site really useful for ..." required>
+  		  </div>
+
+  		  <button type="submit" class="btn btn-success">Submit</button>
+  		</form>
+  	</div>
+  </div>
+</template> <!-- end website form -->
+
+<!-- template that displays several website items -->
+<template name="website_list">
+	<ol class="website-list">
+  	{{#each websites}}
+      {{> website_item}}
+  	{{/each}}
+	</ol>
+</template> <!-- end website list -->
+
+<!-- template that displays individual website entries -->
+<template name="website_item">
+  <li class="website-item">
+  	<h3>
+      <a href="{{url}}" target="_blank">{{title}}</a>
+      <small><a href="/site/{{_id}}">view details</a></small>
+    </h3>
+  	<p class="item-description">
+  		{{description}}
+  	</p>
+    <p class="text-muted item-date">
+      Added by: {{createdByName}} <br>
+      Date added: {{createdOn}}
+    </p>
+    <div class="btn-group btn-group-xs" role="group" aria-lable="vote up or down">
+      <a href="#" class="btn btn-success js-upvote">
+    		<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        <span class="badge">{{upVote}}</span>
+    	</a>
+    	<a href="#" class="btn btn-warning js-downvote">
+    		<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+        <span class="badge">{{downVote}}</span>
+    	</a>
+    </div>
+  </li>
+</template> <!-- end website entries -->
+
+<!-- template that display a single site details -->
+<template name="site_detail">
+  <h2>{{siteDetail.title}}</h2>
+  <p>
+    <span class="text-muted">Description:</span> {{siteDetail.description}}
+  </p>
+  <p>
+    <span class="text-muted">Up Votes:</span> {{siteDetail.upVote}}<br>
+    <span class="text-muted">Down Votes:</span> {{siteDetail.downVote}}
+  </p>
+  <p>
+    <span class="text-muted">Date Added:</span> {{siteDetail.createdOn}}
+  </p>
+  <p>
+    <a href="/">back to the site list</a>
+  </p>
+</template> <!-- end single site details -->
+
+<!-- form for the adding of comment about a single site -->
+<template name="comment_form">
+  <div class="page-header">
+    <a class="btn btn-info js-toggle-comment-form" href="#">
+  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  	</a>
+    Add a comment
+  	<div id="comment-form" class="hidden_div">
+  		<form class="js-save-comment-form">
+  		  <div class="form-group">
+  		    <label for="comment">Enter your comment</label>
+  		    <textarea class="form-control" id="comment" required>Here are my thoughts...
+          </textarea>
+  		  </div>
+
+  		  <button type="submit" class="btn btn-success">Submit</button>
+  		</form>
+  	</div>
+  </div>
+</template> <!-- end comment form -->
+
+<!-- template that displays single site comments -->
+<template name="comments_list">
+  <h3>Comments</h3>
+  <ol class="comments-list">
+  	{{#each comments}}
+      {{> comment_item}}
+  	{{/each}}
+	</ol>
+</template>
+
+<!-- template that displays individual comments -->
+<template name="comment_item">
+  <li class="comment-item">
+  	<p class="comment">
+  		{{comment}}
+  	</p>
+    <p class="comment-user">
+      <span class="text-muted">comment added by</span> {{userName}}
+    </p>
+    <p class="text-muted item-date">
+      Date added: {{createdOn}}
+    </p>
+  </li>
+</template> <!-- end website entries -->
+
+<!-- template for search -->
+<template name="search">
+  {{> EasySearch.Input index=websitesIndex attributes=inputAttributes}}
+
+  <ul>
+    {{#EasySearch.Each index=websitesIndex}}
+      {{> website_item}}
+    {{/EasySearch.Each}}
+  </ul>
+
+  {{#EasySearch.IfNoResults index=websitesIndex}}
+    <div class="no-results">No results found!</div>
+  {{/EasySearch.IfNoResults}}
+
+  <div class="site-pag text-center text-info">
+    {{> EasySearch.Pagination index=websitesIndex maxPages=10 prevAndNext=true}}
+  </div>
+
+</template> <!-- end search template -->
