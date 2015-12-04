@@ -159,7 +159,6 @@ Template.website_form.events({
 
     // website saving code
     if (Meteor.user()) {
-      console.log('save code', Meteor.user());
       Websites.insert({
         title: title,
         url: url,

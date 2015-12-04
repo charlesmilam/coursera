@@ -5,7 +5,6 @@ Websites.allow({
   insert: function(userId, doc) {
     console.log('collections insert', userId, doc);
     if (Meteor.user()) {
-      console.log('collections insert logged in');
       if (userId != doc.createdById) {
         return false;
       }
@@ -19,18 +18,13 @@ Websites.allow({
   },
   update: function(userId, doc) {
     if (Meteor.user()) {
-      if (userId != doc.createdById) {
-        return false;
-      }
-      else {
-        return true;
-      }
+      return true
     }
     else {
       return false;
     }
   }
-});
+}); // end collections security
 
 // index for use by easy search
 WebsitesIndex = new EasySearch.Index({
