@@ -10,6 +10,7 @@ Meteor.startup(function () {
       upVote: 0,
       downVote: 0,
       comments: [],
+      createdBy: 'Ace',
       createdOn:new Date()
     });
      Websites.insert({
@@ -19,6 +20,7 @@ Meteor.startup(function () {
       upVote: 0,
       downVote: 0,
       comments: [],
+      createdBy: 'Ace',
       createdOn:new Date()
     });
      Websites.insert({
@@ -28,6 +30,7 @@ Meteor.startup(function () {
       upVote: 0,
       downVote: 0,
       comments: [],
+      createdBy: 'Ace',
       createdOn:new Date()
     });
     Websites.insert({
@@ -37,6 +40,7 @@ Meteor.startup(function () {
       upVote: 0,
       downVote: 0,
       comments: [],
+      createdBy: 'Ace',
       createdOn:new Date()
     });
   }
