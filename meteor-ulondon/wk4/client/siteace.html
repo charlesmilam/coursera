@@ -59,7 +59,7 @@
         </ul>
       </div>
     </div>
-    </div>    
+    </div>
 </template> <!-- end navbar -->
 
 <!-- header for pages -->
@@ -224,6 +224,8 @@
     <div class="no-results">No results found!</div>
   {{/EasySearch.IfNoResults}}
 
+  <div class="site-pag text-center text-info">
+    {{> EasySearch.Pagination index=websitesIndex maxPages=10 prevAndNext=true}}
+  </div>
 
-  {{> EasySearch.Pagination index=websitesIndex maxPages=10}}
 </template> <!-- end search template -->
