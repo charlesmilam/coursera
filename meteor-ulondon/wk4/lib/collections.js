@@ -28,7 +28,7 @@ Websites.allow({
 // index for use by easy search
 WebsitesIndex = new EasySearch.Index({
   collection: Websites,
-  fields: ['createdBy', 'title', 'description'],
+  fields: ['createdByName', 'title', 'description'],
   engine: new EasySearch.Minimongo({
     sort: function()
       {
