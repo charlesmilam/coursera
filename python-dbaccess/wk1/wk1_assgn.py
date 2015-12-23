@@ -1,6 +1,7 @@
 import sqlite3
+import re
 
-conn = sqlite3.connect('emaildb.sqlite')
+conn = sqlite3.connect('python-dbaccess-wk1.sqlite')
 cur = conn.cursor()
 
 cur.execute('''
@@ -10,13 +11,15 @@ cur.execute('''
 CREATE TABLE Counts (email TEXT, count INTEGER)''')
 
 fname = raw_input('Enter file name: ')
-if ( len(fname) < 1 ) : fname = 'mbox-short.txt'
+if ( len(fname) < 1 ) : fname = 'mbox.txt'
 fh = open(fname)
+count = 0
+
 for line in fh:
     if not line.startswith('From: ') : continue
     pieces = line.split()
     email = pieces[1]
-    print email
+    # print email
     cur.execute('SELECT count FROM Counts WHERE email = ? ', (email, ))
     row = cur.fetchone()
     if row is None:
@@ -25,6 +28,12 @@ for line in fh:
     else :
         cur.execute('UPDATE Counts SET count=count+1 WHERE email = ?',
             (email, ))
+
+    count += 1
+
+    print 'working' + '.' * count
+    if count == 50:
+        count = 1
     # This statement commits outstanding changes to disk each
     # time through the loop - the program can be made faster
     # by moving the commit so it runs only after the loop completes
