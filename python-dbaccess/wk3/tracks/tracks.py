@@ -27,13 +27,13 @@ CREATE TABLE Track (
         AUTOINCREMENT UNIQUE,
     title TEXT  UNIQUE,
     album_id  INTEGER,
+    genre_id INTEGER,
     len INTEGER, rating INTEGER, count INTEGER
 );
 
 CREATE TABLE Genre (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-    name TEXT UNIQUE,
-    track_id INTEGER
+    ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    name TEXT UNIQUE
 )
 ''')
 
@@ -69,6 +69,9 @@ for entry in all:
     if name is None or artist is None or album is None :
         continue
 
+    if genre is None:
+        genre = "N/A"
+
     print name, artist, album, count, rating, length, genre
 
     cur.execute('''INSERT OR IGNORE INTO Artist (name)
@@ -81,17 +84,17 @@ for entry in all:
     cur.execute('SELECT id FROM Album WHERE title = ? ', (album, ))
     album_id = cur.fetchone()[0]
 
-    cur.execute('''INSERT OR REPLACE INTO Track
-        (title, album_id, len, rating, count)
-        VALUES ( ?, ?, ?, ?, ? )''',
-        ( name, album_id, length, rating, count ) )
-    track_id = cur.fetchone()[0]
-
-    cur.execute(
-        '''INSERT OR REPLACE INTO Genre
-        (name, track_id)
-        VALUES (?, ?)''',
-        (genre, track_id)
+    cur.execute('''INSERT OR IGNORE INTO Genre
+        (name)
+        VALUES (?)''',
+        (genre, )
     )
+    cur.execute('SELECT ID FROM Genre WHERE name = ?', (genre, ))
+    genre_id = cur.fetchone()[0]
+
+    cur.execute('''INSERT OR REPLACE INTO Track
+        (title, album_id, genre_id, len, rating, count)
+        VALUES ( ?, ?, ?, ?, ?, ?)''',
+        ( name, album_id, genre_id, length, rating, count ) )
 
     conn.commit()
